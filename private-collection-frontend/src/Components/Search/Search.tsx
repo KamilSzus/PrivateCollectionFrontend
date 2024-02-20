@@ -1,4 +1,5 @@
 import { ChangeEvent, useState, MouseEvent, SyntheticEvent } from "react"
+import { BoardGamesGetAll, BoardGamesGetByTitle } from "../../Services/BoardGameServices";
 
 interface SearchProps { }
 
@@ -12,7 +13,8 @@ const Search: React.FC<SearchProps> = (props: SearchProps): JSX.Element => {
     }
 
     const onClick = (e: SyntheticEvent) => {
-        console.log(e);
+        console.log(search);
+        BoardGamesGetByTitle(search);
     }
 
     return (
